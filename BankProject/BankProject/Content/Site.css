@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.heading {
+    text-align: center;
+}
+
+.sheading {
+    font-size: 15px;
+}

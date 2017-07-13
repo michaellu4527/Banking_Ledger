@@ -8,8 +8,26 @@ namespace BankProject.Controllers
 {
     public class TransactionsController : Controller
     {
-        // GET: Transactions
-        public ActionResult Index()
+        // GET: Transactions/Deposit
+        public ActionResult Deposit()
+        {
+            return View();
+        }
+
+        // GET: Transactions/Withdraw
+        public ActionResult Withdraw()
+        {
+            return View();
+        }
+
+        // GET: Transactions/Balance
+        public ActionResult Balance()
+        {
+            return View();
+        }
+
+        // GET: Transactions/History
+        public ActionResult History()
         {
             return View();
         }

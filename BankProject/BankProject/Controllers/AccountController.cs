@@ -8,8 +8,20 @@ namespace BankProject.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: Account
-        public ActionResult Index()
+        // GET: Account/Login
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        // GET: Account/Register
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        // GET: Account/LogOff
+        public ActionResult LogOff()
         {
             return View();
         }
