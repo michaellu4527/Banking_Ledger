@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Bank Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to the Bank</h1>
+    <br />
+    <p class="lead">Name: @Html.TextBox("Name", null, new { @class = "form-control"})</p>
+    <p class="lead">Account Number: @Html.TextBox("Name", null, new { @class = "form-control" })</p>
+
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-3">
+            <input type="button" value="Deposit" />
+        </div>
+        <div class="col-md-3">
+            <input type="button" value="Withdraw" />
+        </div>
+        <div class="col-md-3">
+            <input type="button" value="Check Balance" />
+        </div>
+        <div class="col-md-3">
+            <input type="button" value="Past Transactions" />
+        </div>
+
+    </div>
+    
+</div>
