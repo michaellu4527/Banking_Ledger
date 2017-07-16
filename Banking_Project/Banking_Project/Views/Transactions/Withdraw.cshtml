@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Withdraw";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <h2 class="heading">Withdraw some money!</h2>
+    <br />
+    <strong class="sheading">Enter the amount you wish to withdraw: @Html.TextBox("Name", null, new { @class = "form-control" }) </strong>
+
+    <br />
+    <div>
+        <input type="button" value="Withdraw" />
+    </div>
+
+</body>
+</html>
+
