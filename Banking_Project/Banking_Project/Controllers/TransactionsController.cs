@@ -9,15 +9,16 @@ namespace Banking_Project.Controllers
 {
     public class TransactionsController : Controller
     {
+        User account = new User();
         //private TransactionsController balance = new AccountViewModels
+        
         // GET: Transactions/Deposit
+        // Handles depositing money into an account
         [HttpGet]
         public ActionResult Deposit()
         {
             // Need to add deposited money to total balance. Then update cache accordingly
             // balance = balance + deposit
-
-            
 
             return View();
         }
@@ -25,23 +26,27 @@ namespace Banking_Project.Controllers
         [HttpPost]
         public ActionResult Deposit(double deposit)
         {
-            //total = total + deposit;
+            account.Balance = account.Balance + deposit;
             return View();
         }
 
         // GET: Transactions/Withdraw
+        // Handles withdrawing money from an account. Subtracts withdrawn amount from total balance.
         public ActionResult Withdraw()
         {
             return View();
         }
 
         // GET: Transactions/Balance
-        public ActionResult Balance()
+        // Simply returns the current balance on the account
+        public ActionResult Balance(double withdraw)
         {
+            account.Balance = account.Balance - withdraw;
             return View();
         }
 
         // GET: Transactions/History
+        // Returns the past 5 transactions made on the account
         public ActionResult History()
         {
             return View();

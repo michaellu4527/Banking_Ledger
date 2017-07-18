@@ -80,7 +80,7 @@ namespace Banking_Project.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Display(Name = "Account ID")]
+        [Display(Name = "Account Number")]
         public string AccountID { get; set; }
 
         [Display(Name = "Initial Balance")]
