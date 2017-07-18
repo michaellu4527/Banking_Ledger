@@ -20,7 +20,7 @@ namespace Banking_Project.Controllers
         }
 
         [HttpPost]
-        [OutputCache (Duration=60)]
+        [OutputCache(Duration=60, VaryByParam ="none")]
         public ActionResult Deposit(double deposit)
         {
             model.Balance = model.Balance + deposit;
@@ -37,6 +37,7 @@ namespace Banking_Project.Controllers
         // POST: Transactions/Withdraw
         // Handles withdrawing money from an account. Subtracts withdrawn amount from total balance.
         [HttpPost]
+        [OutputCache(Duration = 60, VaryByParam = "none")]
         public ActionResult Withdraw(double withdraw)
         {
             model.Balance = model.Balance + withdraw;
@@ -54,6 +55,7 @@ namespace Banking_Project.Controllers
 
         // GET: Transactions/History
         // Returns the past 5 transactions made on the account
+        [HttpGet]
         public ActionResult History()
         {
             return View();
