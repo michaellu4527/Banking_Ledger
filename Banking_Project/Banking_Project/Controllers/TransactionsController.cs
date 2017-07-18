@@ -9,40 +9,47 @@ namespace Banking_Project.Controllers
 {
     public class TransactionsController : Controller
     {
-        User account = new User();
-        //private TransactionsController balance = new AccountViewModels
-        
+        RegisterViewModel model = new RegisterViewModel();
+
         // GET: Transactions/Deposit
         // Handles depositing money into an account
         [HttpGet]
         public ActionResult Deposit()
         {
-            // Need to add deposited money to total balance. Then update cache accordingly
-            // balance = balance + deposit
-
-            return View();
+            return View(model);
         }
 
         [HttpPost]
+        [OutputCache (Duration=60)]
         public ActionResult Deposit(double deposit)
         {
-            account.Balance = account.Balance + deposit;
-            return View();
+            model.Balance = model.Balance + deposit;
+            return View(model);
         }
 
         // GET: Transactions/Withdraw
-        // Handles withdrawing money from an account. Subtracts withdrawn amount from total balance.
+        [HttpGet]
         public ActionResult Withdraw()
         {
-            return View();
+            return View(model);
+        }
+
+        // POST: Transactions/Withdraw
+        // Handles withdrawing money from an account. Subtracts withdrawn amount from total balance.
+        [HttpPost]
+        public ActionResult Withdraw(double withdraw)
+        {
+            model.Balance = model.Balance + withdraw;
+            return View(model);
         }
 
         // GET: Transactions/Balance
         // Simply returns the current balance on the account
-        public ActionResult Balance(double withdraw)
+        [HttpGet]
+        [OutputCache(Duration = 60)]
+        public ActionResult Balance()
         {
-            account.Balance = account.Balance - withdraw;
-            return View();
+            return View(model);
         }
 
         // GET: Transactions/History

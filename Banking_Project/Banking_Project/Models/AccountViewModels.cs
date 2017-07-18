@@ -80,16 +80,19 @@ namespace Banking_Project.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
+        // Gets bank account number of user
+        [Required]
         [Display(Name = "Account Number")]
         public string AccountID { get; set; }
 
-        [Display(Name = "Initial Balance")]
+        [Required]
+        [Display(Name = "Name")]
+        public string Name { get; set; }
+
+        // Gets initial starting balance of user
+        [Required]
+        [Display(Name = "Balance")]
         public double Balance { get; set; }
-
-        public RegisterViewModel()
-        {
-
-        }
     }
 
     public class ResetPasswordViewModel
