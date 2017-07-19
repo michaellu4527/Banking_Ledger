@@ -11,6 +11,7 @@
     @Html.AntiForgeryToken()
     <h4>Create a new account.</h4>
     <hr />
+    @* Form for entering email *@
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
@@ -18,36 +19,42 @@
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
         </div>
     </div>
+    @* Form for entering password *@
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
         </div>
     </div>
+    @* Form for confirming password *@
     <div class="form-group">
         @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
         </div>
     </div>
+    @* Form for entering name *@
     <div class="form-group">
         @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
         </div>
     </div>
+    @* Form for entering account number *@
     <div class="form-group">
         @Html.LabelFor(m => m.AccountID, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.AccountID, new { @class = "form-control" })
         </div>
     </div>
+    @* Form for entering initial balance *@
     <div class="form-group">
         @Html.LabelFor(m => m.Balance, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Balance, new { @class = "form-control" })
         </div>
     </div>
+    @* Register button *@
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Register" />

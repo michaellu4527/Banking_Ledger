@@ -85,6 +85,7 @@ namespace Banking_Project.Models
         [Display(Name = "Account Number")]
         public string AccountID { get; set; }
 
+        // Gets name of user
         [Required]
         [Display(Name = "Name")]
         public string Name { get; set; }

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Banking_Project.Models.RegisterViewModel
+
+@{
     ViewBag.Title = "Bank Home Page";
 }
 
@@ -7,8 +9,9 @@
 <div class="jumbotron">
     <h1>Welcome to the Bank</h1>
     <br />
-    <p class="lead">Name: @Html.TextBox("Name", null, new { @class = "form-control" })</p>
-    <p class="lead">Account Number: @Html.TextBox("Name", null, new { @class = "form-control" })</p>
+    @* Displaying account name and account number *@
+    <p class="lead">Name: @Html.DisplayNameFor(m => m.Name)</p>
+    <p class="lead">Account Number: @Html.DisplayNameFor(m => m.AccountID)</p>
 
     <br />
     <br />

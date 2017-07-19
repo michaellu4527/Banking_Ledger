@@ -9,6 +9,7 @@ namespace Banking_Project.Controllers
 {
     public class TransactionsController : Controller
     {
+        // Creating instance of model 
         RegisterViewModel model = new RegisterViewModel();
 
         // GET: Transactions/Deposit
@@ -20,7 +21,7 @@ namespace Banking_Project.Controllers
         }
 
         [HttpPost]
-        [OutputCache(Duration=60, VaryByParam ="none")]
+        [OutputCache(Duration = 60, VaryByParam = "none")]
         public ActionResult Deposit(double deposit)
         {
             model.Balance = model.Balance + deposit;
